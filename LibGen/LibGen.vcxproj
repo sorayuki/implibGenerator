@@ -194,6 +194,9 @@
       </ModuleDefinitionFile>
       <SubSystem>Windows</SubSystem>
     </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="LibFactory.h" />
