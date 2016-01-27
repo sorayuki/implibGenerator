@@ -1,0 +1,3 @@
+LIBRARY LibGen
+EXPORTS
+	CreateLibraryBuilder

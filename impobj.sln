@@ -1,0 +1,104 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoffGen", "CoffGen\CoffGen.vcxproj", "{A3F71BEF-1263-4682-8A22-A2966B4BA075}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImpGen", "ImpGen\ImpGen.vcxproj", "{5E0B0EF6-C023-44B1-820A-F8EA26D5297D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075} = {A3F71BEF-1263-4682-8A22-A2966B4BA075}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImpLibFix", "ImpLibFix\ImpLibFix.vcxproj", "{D2693F3C-593D-41A7-B936-4D962095DFD4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibGen", "LibGen\LibGen.vcxproj", "{79742C1B-1D28-4DF4-B5AA-D161599491C3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075} = {A3F71BEF-1263-4682-8A22-A2966B4BA075}
+		{5E0B0EF6-C023-44B1-820A-F8EA26D5297D} = {5E0B0EF6-C023-44B1-820A-F8EA26D5297D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibGenHelper", "LibGenHelper\LibGenHelper.vcxproj", "{EA713B3F-F9E0-4283-8632-250077CE0768}"
+	ProjectSection(ProjectDependencies) = postProject
+		{79742C1B-1D28-4DF4-B5AA-D161599491C3} = {79742C1B-1D28-4DF4-B5AA-D161599491C3}
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075} = {A3F71BEF-1263-4682-8A22-A2966B4BA075}
+		{5E0B0EF6-C023-44B1-820A-F8EA26D5297D} = {5E0B0EF6-C023-44B1-820A-F8EA26D5297D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MakeImpLib", "MakeImpLib\MakeImpLib.vcxproj", "{6E63662B-403E-4DBD-A27F-3038B3BC6D2B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EA713B3F-F9E0-4283-8632-250077CE0768} = {EA713B3F-F9E0-4283-8632-250077CE0768}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release_Static|Win32 = Release_Static|Win32
+		Release|Win32 = Release|Win32
+		TestCoffGen|Win32 = TestCoffGen|Win32
+		TestImpGen|Win32 = TestImpGen|Win32
+		TestLibGen|Win32 = TestLibGen|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075}.Debug|Win32.Build.0 = Debug|Win32
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075}.Release_Static|Win32.ActiveCfg = Release_Static|Win32
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075}.Release_Static|Win32.Build.0 = Release_Static|Win32
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075}.Release|Win32.ActiveCfg = Release|Win32
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075}.Release|Win32.Build.0 = Release|Win32
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075}.TestCoffGen|Win32.ActiveCfg = TestCoffGen|Win32
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075}.TestCoffGen|Win32.Build.0 = TestCoffGen|Win32
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075}.TestImpGen|Win32.ActiveCfg = TestImpGen|Win32
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075}.TestImpGen|Win32.Build.0 = TestImpGen|Win32
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075}.TestLibGen|Win32.ActiveCfg = TestLibGen|Win32
+		{A3F71BEF-1263-4682-8A22-A2966B4BA075}.TestLibGen|Win32.Build.0 = TestLibGen|Win32
+		{5E0B0EF6-C023-44B1-820A-F8EA26D5297D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5E0B0EF6-C023-44B1-820A-F8EA26D5297D}.Debug|Win32.Build.0 = Debug|Win32
+		{5E0B0EF6-C023-44B1-820A-F8EA26D5297D}.Release_Static|Win32.ActiveCfg = Release_Static|Win32
+		{5E0B0EF6-C023-44B1-820A-F8EA26D5297D}.Release_Static|Win32.Build.0 = Release_Static|Win32
+		{5E0B0EF6-C023-44B1-820A-F8EA26D5297D}.Release|Win32.ActiveCfg = Release|Win32
+		{5E0B0EF6-C023-44B1-820A-F8EA26D5297D}.Release|Win32.Build.0 = Release|Win32
+		{5E0B0EF6-C023-44B1-820A-F8EA26D5297D}.TestCoffGen|Win32.ActiveCfg = TestCoffGen|Win32
+		{5E0B0EF6-C023-44B1-820A-F8EA26D5297D}.TestImpGen|Win32.ActiveCfg = TestImpGen|Win32
+		{5E0B0EF6-C023-44B1-820A-F8EA26D5297D}.TestImpGen|Win32.Build.0 = TestImpGen|Win32
+		{5E0B0EF6-C023-44B1-820A-F8EA26D5297D}.TestLibGen|Win32.ActiveCfg = TestLibGen|Win32
+		{5E0B0EF6-C023-44B1-820A-F8EA26D5297D}.TestLibGen|Win32.Build.0 = TestLibGen|Win32
+		{D2693F3C-593D-41A7-B936-4D962095DFD4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D2693F3C-593D-41A7-B936-4D962095DFD4}.Release_Static|Win32.ActiveCfg = Release_Static|Win32
+		{D2693F3C-593D-41A7-B936-4D962095DFD4}.Release|Win32.ActiveCfg = Release|Win32
+		{D2693F3C-593D-41A7-B936-4D962095DFD4}.TestCoffGen|Win32.ActiveCfg = TestCoffGen|Win32
+		{D2693F3C-593D-41A7-B936-4D962095DFD4}.TestImpGen|Win32.ActiveCfg = TestImpGen|Win32
+		{D2693F3C-593D-41A7-B936-4D962095DFD4}.TestLibGen|Win32.ActiveCfg = TestLibGen|Win32
+		{79742C1B-1D28-4DF4-B5AA-D161599491C3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{79742C1B-1D28-4DF4-B5AA-D161599491C3}.Debug|Win32.Build.0 = Debug|Win32
+		{79742C1B-1D28-4DF4-B5AA-D161599491C3}.Release_Static|Win32.ActiveCfg = Release_Static|Win32
+		{79742C1B-1D28-4DF4-B5AA-D161599491C3}.Release_Static|Win32.Build.0 = Release_Static|Win32
+		{79742C1B-1D28-4DF4-B5AA-D161599491C3}.Release|Win32.ActiveCfg = Release|Win32
+		{79742C1B-1D28-4DF4-B5AA-D161599491C3}.Release|Win32.Build.0 = Release|Win32
+		{79742C1B-1D28-4DF4-B5AA-D161599491C3}.TestCoffGen|Win32.ActiveCfg = TestCoffGen|Win32
+		{79742C1B-1D28-4DF4-B5AA-D161599491C3}.TestImpGen|Win32.ActiveCfg = TestImpGen|Win32
+		{79742C1B-1D28-4DF4-B5AA-D161599491C3}.TestLibGen|Win32.ActiveCfg = TestLibGen|Win32
+		{79742C1B-1D28-4DF4-B5AA-D161599491C3}.TestLibGen|Win32.Build.0 = TestLibGen|Win32
+		{EA713B3F-F9E0-4283-8632-250077CE0768}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EA713B3F-F9E0-4283-8632-250077CE0768}.Debug|Win32.Build.0 = Debug|Win32
+		{EA713B3F-F9E0-4283-8632-250077CE0768}.Release_Static|Win32.ActiveCfg = Release_Static|Win32
+		{EA713B3F-F9E0-4283-8632-250077CE0768}.Release_Static|Win32.Build.0 = Release_Static|Win32
+		{EA713B3F-F9E0-4283-8632-250077CE0768}.Release|Win32.ActiveCfg = Release|Win32
+		{EA713B3F-F9E0-4283-8632-250077CE0768}.Release|Win32.Build.0 = Release|Win32
+		{EA713B3F-F9E0-4283-8632-250077CE0768}.TestCoffGen|Win32.ActiveCfg = Release|Win32
+		{EA713B3F-F9E0-4283-8632-250077CE0768}.TestImpGen|Win32.ActiveCfg = Release|Win32
+		{EA713B3F-F9E0-4283-8632-250077CE0768}.TestLibGen|Win32.ActiveCfg = Release|Win32
+		{6E63662B-403E-4DBD-A27F-3038B3BC6D2B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6E63662B-403E-4DBD-A27F-3038B3BC6D2B}.Debug|Win32.Build.0 = Debug|Win32
+		{6E63662B-403E-4DBD-A27F-3038B3BC6D2B}.Release_Static|Win32.ActiveCfg = Release_Static|Win32
+		{6E63662B-403E-4DBD-A27F-3038B3BC6D2B}.Release_Static|Win32.Build.0 = Release_Static|Win32
+		{6E63662B-403E-4DBD-A27F-3038B3BC6D2B}.Release|Win32.ActiveCfg = Release|Win32
+		{6E63662B-403E-4DBD-A27F-3038B3BC6D2B}.Release|Win32.Build.0 = Release|Win32
+		{6E63662B-403E-4DBD-A27F-3038B3BC6D2B}.TestCoffGen|Win32.ActiveCfg = Release|Win32
+		{6E63662B-403E-4DBD-A27F-3038B3BC6D2B}.TestImpGen|Win32.ActiveCfg = Release|Win32
+		{6E63662B-403E-4DBD-A27F-3038B3BC6D2B}.TestLibGen|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
