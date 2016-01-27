@@ -1,0 +1,54 @@
+This tool is inspired by implib sdk project( http://implib.sourceforge.net ).
+
+For "stdcall" convention exported from DLL file without decoration
+(prefix, suffix, like _ and @4, @8, etc) like Windows APIs, it seems to be
+ not easy to get an import library by yourself. The LIB.exe tool from VC can
+ construct .lib from .def but it doesn't allow importing without decoration
+and linking with decoration.
+
+For example, I want to use Sleep function from kernel32.dll. I would like to
+build an import library from a def file like this:
+
+LIBRARY kernel32.dll
+EXPORTS
+    Sleep
+
+and create it by
+
+lib /def:k32.def /out:k32.lib
+
+but when linking, it will say
+error LNK2019: unresolved external symbol _Sleep@4 referenced
+( use "cl test.c k32.lib /link /nodefaultlib" to have this test please. )
+
+The linker looks for _Sleep@4 instead of Sleep.
+
+But if the .lib is build from this:
+
+LIBRARY kernel32.dll
+EXPORTS
+    Sleep@4
+
+The build exe file won't run because there is no function named Sleep@4
+in kernel32.dll.
+
+So I need a .lib that imports Sleep from kernel32.dll and offers _Sleep@4
+for linking.
+
+ImpLib SDK project make use of fasm preprocess macros to construct a binary 
+formed import library of DLL. It's very amazing.
+
+After some trying, I found it has some limitation, like long DLL file name is
+not supported, unicode function name is not supported, no x86-64 architecture
+supported, etc.
+
+But I have a lack of knowledge of fasm macro usage. To overcome these
+limitation, I decided to write my own.
+
+The structure of .obj file and .lib file is from Microsoft:
+http://download.microsoft.com/download/e/b/a/eba1050f-a31d-436b-9281-92cdfeae4b45/pecoff.doc
+
+No dependency library is required except standard c runtime and windows sdk.
+
+LeiMing (sorayuki)
+2016-01-27
